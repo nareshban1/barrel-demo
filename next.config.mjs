@@ -1,10 +1,13 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+    optimizePackageImports: ["@/components/ui"],
+  },
+};
 
-const config =
-  process.env.ANALYZE === "true"
-    ? withBundleAnalyzer({ enabled: true })(nextConfig)
-    : nextConfig;
+const config = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
+  nextConfig
+);
 
 export default config;
