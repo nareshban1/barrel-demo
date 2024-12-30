@@ -2,6 +2,7 @@
   "name": "barrel-demo",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "dev": "ANALYZE=false next dev",
     "build": "ANALYZE=true next build",
